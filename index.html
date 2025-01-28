@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Analytics Implementation</title>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-XXXXXXXXX-X"); // Replace with your Google Analytics tracking ID
+    </script>
+
+    <!-- Amplitude -->
+    <script src="https://cdn.amplitude.com/libs/analytics-browser-2.8.0-min.js.gz"></script>
+    <script>
+      amplitude.init("YOUR_AMPLITUDE_API_KEY"); // Replace with your Amplitude API key
+    </script>
+  </head>
+  <body>
+    <h1>Welcome to the Simple Analytics Page</h1>
+    <p>
+      This page demonstrates how to implement Google Analytics and Amplitude.
+    </p>
+
+    <button onclick="trackButtonClick()">Click Me!</button>
+
+    <script>
+      function trackButtonClick() {
+        // Track the button click in Google Analytics
+        gtag("event", "click", {
+          event_category: "button",
+          event_label: "Click Me Button",
+        });
+
+        // Track the button click in Amplitude
+        amplitude.track("button_click", {
+          button_id: "Click Me Button",
+        });
+
+        alert("Button click tracked!");
+      }
+    </script>
+  </body>
+</html>
