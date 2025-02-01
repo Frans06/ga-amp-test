@@ -14,7 +14,6 @@
         autocapture: true,
       });
     </script>
-    <!-- Google Analytics -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-6B4XYVDGES"
@@ -39,19 +38,18 @@
 
     <script>
       function trackButtonClick() {
-        // // Track the button click in Google Analytics
-        // gtag("event", "click", {
-        //   event_category: "button",
-        //   event_label: "Click Me Button",
-        // });
-        //
-        // // Track the button click in Amplitude
-        // amplitude.track("button_click", {
-        //   button_id: "Click Me Button",
-        // });
-        //
-        // alert("Button click tracked!");
-        console.log("hello");
+        // Track the button click in Google Analytics
+        gtag("event", "click", {
+          event_category: "button",
+          event_label: "Click Me Button",
+        });
+
+        // Track the button click in Amplitude
+        amplitude.track("button_click", {
+          button_id: "Click Me Button",
+        });
+
+        alert("Button click tracked!");
       }
     </script>
   </body>
