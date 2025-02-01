@@ -4,10 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Analytics Implementation</title>
+
+    <!-- Amplitude -->
+    <script src="https://cdn.amplitude.com/script/bd2849ed48033d0fb5bcc864dd2e557c.js"></script>
+    <script>
+      window.amplitude.add(window.sessionReplay.plugin({ sampleRate: 1 }));
+      window.amplitude.init("bd2849ed48033d0fb5bcc864dd2e557c", {
+        fetchRemoteConfig: true,
+        autocapture: true,
+      });
+    </script>
     <!-- Google Analytics -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"
+      src="https://www.googletagmanager.com/gtag/js?id=G-6B4XYVDGES"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -15,13 +25,8 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "UA-XXXXXXXXX-X"); // Replace with your Google Analytics tracking ID
-    </script>
 
-    <!-- Amplitude -->
-    <script src="https://cdn.amplitude.com/libs/analytics-browser-2.8.0-min.js.gz"></script>
-    <script>
-      amplitude.init("YOUR_AMPLITUDE_API_KEY"); // Replace with your Amplitude API key
+      gtag("config", "G-6B4XYVDGES");
     </script>
   </head>
   <body>
